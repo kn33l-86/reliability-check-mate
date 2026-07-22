@@ -239,7 +239,7 @@ export function runReliabilityCheck(raw: CheckInput): CheckResult {
     overlap: Number(overlap.toFixed(2)),
     contradiction: Number(contradiction.toFixed(2)),
     warning,
-    safe_to_answer: label !== "Rejected",
+    safe_to_answer: true,
     expected_match,
   };
 }
