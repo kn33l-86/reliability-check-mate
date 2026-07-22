@@ -126,8 +126,8 @@ function contradictionScore(answer: string, sources: string): number {
   if (aNeg !== sNeg) return 0.75;
 
   // Number mismatch on same entity context
-  const aNums = (answer.match(/\b\d{2,4}\b/g) || []);
-  const sNums = (sources.match(/\b\d{2,4}\b/g) || []);
+  const aNums: string[] = answer.match(/\b\d{2,4}\b/g) ?? [];
+  const sNums: string[] = sources.match(/\b\d{2,4}\b/g) ?? [];
   if (aNums.length && sNums.length) {
     const shared = aNums.some((n) => sNums.includes(n));
     if (!shared) return 0.6;
